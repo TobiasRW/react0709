@@ -1,0 +1,163 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --whiteBG: rgb(247, 245, 250);
+  --light-green: rgb(172, 198, 201);
+  --light-grey: #f1f1f4;
+  --text-color-light: #f1f1f1;
+  --text-color-dark: #333;
+  --text-color-danger: rgb(152, 58, 58);
+  --white: #f1f1f1;
+}
+
+
+.logo{
+  width: 150px;
+}
+
+/* ---------- nav styling ---------- */
+nav {
+  background-color: var(--whiteBG);
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  align-items: center;
+}
+
+nav a{
+  text-decoration: none;
+  color: var(--text-color-dark);
+  font-size: 20px;
+  padding: 10px 20px;
+}
+
+/* Style the links inside the navigation bar */
+.navLinks{
+  display: flex;
+  gap: 20px;
+}
+
+/* Change the color of links on hover */
+nav a:hover {
+  background-color: var(--light-grey);
+  color: var(--text-color-dark);
+}
+
+
+/* Add a color to the active/current link */
+nav a.active {
+  background-color: var(--light-green);
+  color: var(--green);
+}
+
+/* ---------- grid container styling ---------- */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+}
+
+.videoCont{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 90%;
+  margin: 20px auto 0 auto;
+  gap: 30px;
+}
+
+.videoCont h1{
+  font-size: 30px;
+}
+
+/* Image Slider */
+
+.galleryCont h2{
+  font-size: 30px;
+}
+
+.galleryCont{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.picGallery {
+  width: 100%;
+  position: relative;
+  padding: 25px;
+  overflow: hidden;
+}
+
+.picGallery input {
+  display: none;
+}
+
+.picGallery input:checked + label {
+  background-color: white;
+}
+
+.picGallery input:checked + label + .slide {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.picGallery input:checked ~ .slide {
+  transform: translateX(100%);
+}
+
+.picGallery label {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background-color: transparent;
+  margin: calc(400px - 30px) 6px 0 6px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.picGallery .slide {
+  position: absolute;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 25px;
+  width: calc(600px - 50px);
+  height: calc(100% - 50px);
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: translateX(-100%);
+  transition-duration: 0.4s;
+  opacity: 0;
+  box-shadow: 0 0 20px 0px;
+  border-radius: 10px;
+}
+
+.picGallery .slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14vw;
+  color: #fff;
+}
+
+.picGallery .background1 {
+  background-image: url('./assets/pic1.jpg');
+}
+
+.picGallery .background2 {
+  background-image: url('./assets/pic2.jpg');
+}
+
+.picGallery .background3 {
+  background-image: url('./assets/pic3.jpg');
+}
+
